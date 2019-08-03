@@ -6,10 +6,10 @@ close all
 clear
 
 save_path='D:\average\cluster';
-id = 1:30;  
+id = 1:30;  % participants' ID
 Ns = length(id);
 
-%% read EEG data, separately for each condition 
+%% read the averaged EEG data for each subjects and each condition
 for i=1:Ns
     cfg = [];
     cfg.trialdef.eventtype = 'average'; % this is the important line
