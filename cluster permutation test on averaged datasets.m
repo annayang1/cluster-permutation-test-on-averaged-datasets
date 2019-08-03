@@ -1,3 +1,4 @@
+% % author: finch
 % % this script reads averaged EEG data(each subject in each condition)
 % % and makes cluster-based permutation test
 
