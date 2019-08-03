@@ -13,14 +13,14 @@ Ns = length(id);
 for i=1:Ns
     cfg = [];
     cfg.trialdef.eventtype = 'average'; % this is the important line
-    cfg.dataset = strcat(num2str(i),'-A.avg'); 
+    cfg.dataset = strcat(num2str(i),'_A.avg'); 
     cfg = ft_definetrial(cfg);
     condA = ft_preprocessing(cfg);  
     condA2=ft_timelockanalysis([], condA);
     
     cfg = [];
     cfg.trialdef.eventtype = 'average';
-    cfg.dataset = strcat(num2str(i),'-B.avg'); 
+    cfg.dataset = strcat(num2str(i),'_B.avg'); 
     cfg = ft_definetrial(cfg);
     condB = ft_preprocessing(cfg); 
     condB2=ft_timelockanalysis([], condB);
@@ -58,7 +58,7 @@ for i=1:Ns
     figure; ft_multiplotER(cfg, erpA, erpB)
     
     save([save_path, num2str(i), '_erp.mat'], 'erpA', 'erpB')   
-    clear  condA condB erpA erpB 
+    clear  condA2 condB2 erpA erpB 
 end
 
 %%%%%%%%%%% prepare data for grand-avg and statistical test%%%%%%%%%%%%%%%%
